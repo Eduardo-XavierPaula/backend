@@ -5,7 +5,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const allowedOrigins = [
     'http://localhost:3000', // Primeira URL permitida
-    'https://frontend-omega-three-68.vercel.app/', // Segunda URL permitida
+    'https://frontend-omega-three-68.vercel.app', // Segunda URL permitida
   ];
   // Definir configurações de CORS
   app.enableCors({
