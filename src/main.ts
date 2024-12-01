@@ -7,12 +7,12 @@ async function bootstrap() {
   // Definir configurações de CORS
   app.enableCors({
     origin: [
-      'http://localhost:3000',
       'https://frontend-omega-three-68.vercel.app',
-    ], // Suporta múltiplas origens
-    methods: 'GET,POST,PUT,PATCH,DELETE', // Métodos permitidos
-    allowedHeaders: 'Content-Type, Authorization', // Cabeçalhos permitidos
-    credentials: true, // Permitir cookies e credenciais
+      'http://localhost:3000',
+    ], // Permitindo duas origens
+    methods: 'GET,POST,PUT,PATCH,DELETE',
+    allowedHeaders: 'Content-Type, Authorization',
+    credentials: true,
   });
 
   await app.listen(3001); // Ou a porta que você está utilizando
