@@ -4,15 +4,17 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Habilita CORS para aceitar requisições do seu frontend (ajuste a URL conforme necessário)
+  // Definir configurações de CORS
   app.enableCors({
-    origin: 'http://localhost:3000', // Permite a origem do frontend
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Métodos permitidos
+    origin: [
+      'http://localhost:3000',
+      'https://frontend-omega-three-68.vercel.app',
+    ], // Suporta múltiplas origens
+    methods: 'GET,POST,PUT,PATCH,DELETE', // Métodos permitidos
     allowedHeaders: 'Content-Type, Authorization', // Cabeçalhos permitidos
-    credentials: true, // Se você precisar de cookies ou credenciais
+    credentials: true, // Permitir cookies e credenciais
   });
 
-  // Inicia o servidor na porta especificada
   await app.listen(3001); // Ou a porta que você está utilizando
 }
 
