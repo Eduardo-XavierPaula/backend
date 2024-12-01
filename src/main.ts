@@ -6,10 +6,12 @@ async function bootstrap() {
 
   // Definir configurações de CORS
   app.enableCors({
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
+    origin: [
+      'http://localhost:3000/',
+      'https://frontend-omega-three-68.vercel.app/',
+    ],
+    methods: 'GET,POST,PUT,PATCH,DELETE',
+    allowedHeaders: 'Content-Type, Authorization',
   });
 
   await app.listen(3001); // Ou a porta que você está utilizando
